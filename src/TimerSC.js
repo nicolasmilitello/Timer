@@ -97,6 +97,31 @@ export const InactiveButton = styled.button`
   }
 `;
 
+export const ChangeModeButton = styled.button`
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 1.5rem;
+  margin: 0.4rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.7rem;
+  color: #ecc94b;
+  border-style: groove;
+  background-color: #2a4365;
+  border: 1px solid #ecc94b;
+  color: white;
+
+  &:focus {
+    outline-width: 0;
+  }
+
+  &:hover {
+    background-color: #2c5282;
+    border: 1px solid #ecc94b;
+  }
+`;
+
 export const Type = styled.div`
   & .button {
     display: flex;

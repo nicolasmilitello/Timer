@@ -8,6 +8,7 @@ import {
   ContainerButtons,
   ActiveButton,
   InactiveButton,
+  ChangeModeButton,
   Type,
   InputContainer,
 } from "./TimerSC";
@@ -92,12 +93,7 @@ const Timer = () => {
       </ContainerButtons>
 
       <Type>
-        <button
-          className={"button button-primary button-primary-inactive"}
-          onClick={cambioTipo}
-        >
-          {tipo}
-        </button>
+        <ChangeModeButton onClick={cambioTipo}>{tipo}</ChangeModeButton>
         <InputContainer>
           {tipo === "Countdown Timer" && (
             <input
