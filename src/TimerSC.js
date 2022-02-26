@@ -132,3 +132,7 @@ export const Type = styled.div`
     color: white;
   }
 `;
+
+export const InputContainer = styled.div`
+  height: 29px;
+`;

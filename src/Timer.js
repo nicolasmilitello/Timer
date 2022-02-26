@@ -9,6 +9,7 @@ import {
   ActiveButton,
   InactiveButton,
   Type,
+  InputContainer,
 } from "./TimerSC";
 import { BsFillPlayFill, BsPauseFill } from "react-icons/bs";
 import { MdRefresh } from "react-icons/md";
@@ -96,16 +97,18 @@ const Timer = () => {
         >
           {tipo}
         </button>
-        {tipo === "Countdown Timer" && (
-          <input
-            type="number"
-            min="1"
-            ref={myRef}
-            onChange={agregaSegundos}
-            placeholder="Set seconds"
-            autoComplete="off"
-          />
-        )}
+        <InputContainer>
+          {tipo === "Countdown Timer" && (
+            <input
+              type="number"
+              min="1"
+              ref={myRef}
+              onChange={agregaSegundos}
+              placeholder="Set seconds"
+              autoComplete="off"
+            />
+          )}
+        </InputContainer>
       </Type>
     </Container>
   );
