@@ -67,6 +67,7 @@ const Timer = () => {
   function agregaSegundos() {
     if (myRef.current.value < 0) {
       alert("Negative numbers are not allowed.");
+      setSegundos(0);
     } else {
       let ref = myRef.current.value;
       setSegundos(ref);
