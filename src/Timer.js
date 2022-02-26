@@ -1,6 +1,15 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
-import { Container, Numbers, Unit, Buttons, Type } from "./TimerSC";
+import {
+  Container,
+  Display,
+  Numbers,
+  Unit,
+  ContainerButtons,
+  ActiveButton,
+  InactiveButton,
+  Type,
+} from "./TimerSC";
 import { BsFillPlayFill, BsPauseFill } from "react-icons/bs";
 import { MdRefresh } from "react-icons/md";
 
@@ -55,31 +64,31 @@ const Timer = () => {
   const myRef = useRef(null);
 
   function agregaSegundos() {
-    let ref = myRef.current.value;
-    setSegundos(ref);
+    if (myRef.current.value < 0) {
+      alert("Negative numbers are not allowed.");
+    } else {
+      let ref = myRef.current.value;
+      setSegundos(ref);
+    }
   }
 
   return (
     <Container>
-      <Numbers>{segundos}</Numbers>
+      <Display>
+        <Numbers>{segundos}</Numbers>
+      </Display>
+
       <Unit>seconds</Unit>
 
-      <Buttons>
-        <button
-          className={`button button-primary button-primary-${
-            activo ? "active" : "inactive"
-          }`}
-          onClick={toggle}
-        >
+      <ContainerButtons>
+        <ActiveButton onClick={toggle} state={activo ? 1 : 0}>
           {activo ? <BsPauseFill /> : <BsFillPlayFill />}
-        </button>
-        <button
-          className={"button button-primary button-primary-inactive"}
-          onClick={reset}
-        >
+        </ActiveButton>
+        <InactiveButton onClick={reset}>
           <MdRefresh />
-        </button>
-      </Buttons>
+        </InactiveButton>
+      </ContainerButtons>
+
       <Type>
         <button
           className={"button button-primary button-primary-inactive"}
