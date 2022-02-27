@@ -51,7 +51,7 @@ const Timer = () => {
       }, 1000);
     }
     if (mode === "Stopwatch" && seconds === 99999) {
-      setActive(!active);
+      setActive(false);
       setSeconds(0);
       alert("Maximum number of second reached");
     }
