@@ -122,7 +122,7 @@ export const ChangeModeButton = styled.button`
   }
 `;
 
-export const Type = styled.div`
+export const Mode = styled.div`
   & .button {
     display: flex;
     align-items: center;
