@@ -5,7 +5,7 @@ import ReactDOM from "react-dom";
 import Timer from "./Timer";
 
 //? STYLES:
-import "./globalStylecss";
+import "./globalStyle.css";
 import "./normalize.css";
 
 ReactDOM.render(<Timer />, document.getElementById("root"));
