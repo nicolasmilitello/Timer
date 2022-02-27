@@ -34,7 +34,7 @@ const Timer = () => {
   }
 
   function changeMode() {
-    setActive(!active);
+    setActive(false);
     setSeconds(0);
     if (mode === "Stopwatch") {
       setMode("Countdown Timer");
