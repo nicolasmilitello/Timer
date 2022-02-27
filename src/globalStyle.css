@@ -1,4 +1,10 @@
 :root {
+  --secondsColor: white;
+  --borderButtons: #ecc94b;
+  --fontColorButtons: white;
+  --activeButton: #2b6cb0;
+  --inactiveButton: #2a4365;
+  --hoverButton: #2c5282;
 }
 
 body {

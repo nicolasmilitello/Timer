@@ -1,5 +1,5 @@
 import styled from "styled-components";
-// color: #1a202c;
+
 export const Container = styled.div`
   text-align: center;
   min-height: 100vh;
@@ -9,7 +9,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--secondsColor);
 `;
 
 export const Display = styled.div`
@@ -54,18 +54,18 @@ export const ActiveButton = styled.button`
   text-transform: uppercase;
   font-weight: 600;
   font-size: 1.3rem;
-  color: #ecc94b;
+  color: var(--borderButtons);
   border-style: groove;
 
   ${(props) => {
     if (props.state) {
-      return `background-color: #2b6cb0;
-    border: 1px solid #ecc94b;
-    color: white;`;
+      return `background-color: var(--activeButton);
+    border: 1px solid var(--borderButtons);
+    color: var(--fontColorButtons);`;
     } else {
-      return `background-color: #2a4365;
-    border: 1px solid #ecc94b;
-    color: white;`;
+      return `background-color: var(--inactiveButton);
+    border: 1px solid var(--borderButtons);
+    color: var(--fontColorButtons);`;
     }
   }}
 
@@ -74,8 +74,8 @@ export const ActiveButton = styled.button`
   }
 
   &:hover {
-    background-color: #2c5282;
-    border: 1px solid #ecc94b;
+    background-color: var(--hoverButton);
+    border: 1px solid var(--borderButtons);
   }
 `;
 
@@ -88,19 +88,19 @@ export const InactiveButton = styled.button`
   text-transform: uppercase;
   font-weight: 600;
   font-size: 1.3rem;
-  color: #ecc94b;
+  color: var(--borderButtons);
   border-style: groove;
-  background-color: #2a4365;
-  border: 1px solid #ecc94b;
-  color: white;
+  background-color: var(--inactiveButton);
+  border: 1px solid var(--borderButtons);
+  color: var(--fontColorButtons);
 
   &:focus {
     outline-width: 0;
   }
 
   &:hover {
-    background-color: #2c5282;
-    border: 1px solid #ecc94b;
+    background-color: var(--hoverButton);
+    border: 1px solid var(--borderButtons);
   }
 `;
 
@@ -113,19 +113,19 @@ export const ChangeModeButton = styled.button`
   text-transform: uppercase;
   font-weight: 600;
   font-size: 0.7rem;
-  color: #ecc94b;
+  color: var(--borderButtons);
   border-style: groove;
-  background-color: #2a4365;
-  border: 1px solid #ecc94b;
-  color: white;
+  background-color: var(--inactiveButton);
+  border: 1px solid var(--borderButtons);
+  color: var(--fontColorButtons);
 
   &:focus {
     outline-width: 0;
   }
 
   &:hover {
-    background-color: #2c5282;
-    border: 1px solid #ecc94b;
+    background-color: var(--hoverButton);
+    border: 1px solid var(--borderButtons);
   }
 `;
 
@@ -136,8 +136,8 @@ export const Mode = styled.div`
 
   & input {
     border-radius: 10px;
-    background: #2a4365;
-    color: white;
+    background: var(--inactiveButton);
+    color: var(--fontColorButtons);
     font-size: 0.85rem;
   }
 `;
