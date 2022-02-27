@@ -45,10 +45,15 @@ const Timer = () => {
 
   useEffect(() => {
     let interval = null;
-    if (active && mode === "Stopwatch") {
+    if (active && mode === "Stopwatch" && seconds < 99999) {
       interval = setInterval(() => {
         setSeconds((seconds) => seconds + 1);
       }, 1000);
+    }
+    if (mode === "Stopwatch" && seconds === 99999) {
+      setActive(!active);
+      setSeconds(0);
+      alert("Maximum number of second reached");
     }
 
     if (!active && seconds !== 0 && mode === "Stopwatch") {
@@ -75,6 +80,8 @@ const Timer = () => {
     if (myRef.current.value <= 0) {
       alert("Zero and negative numbers are not allowed.");
       setSeconds(0);
+    } else if (myRef.current.value > 99999) {
+      alert("It can not be greater than 99999.");
     } else {
       let ref = myRef.current.value;
       setSeconds(ref);
@@ -105,6 +112,7 @@ const Timer = () => {
             <input
               type="number"
               min="1"
+              max="99999"
               ref={myRef}
               onChange={addSeconds}
               placeholder="Set seconds"
