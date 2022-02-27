@@ -24,9 +24,16 @@ export const Numbers = styled.h1`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 200px;
   width: 50%;
   margin: 0;
+
+  ${(props) => {
+    if (props.characters) {
+      return `font-size: 200px;`;
+    } else {
+      return `font-size: 125px;`;
+    }
+  }}
 `;
 
 export const Unit = styled.h4`
@@ -123,38 +130,15 @@ export const ChangeModeButton = styled.button`
 `;
 
 export const Mode = styled.div`
-  & .button {
-    display: flex;
-    align-items: center;
-    padding: 0.8rem 1.2rem;
-    margin: 0.4rem;
-    border-radius: 20px;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 0.7rem;
-    color: #ecc94b;
-    border-style: groove;
-  }
-
-  & .button:focus {
-    outline-width: 0;
-  }
-
-  & .button-primary:hover {
-    background-color: #2c5282;
-    border: 1px solid #ecc94b;
-  }
-
-  & .button-primary-inactive {
-    background-color: #2a4365;
-    border: 1px solid #ecc94b;
-    color: white;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   & input {
     border-radius: 10px;
     background: #2a4365;
     color: white;
+    font-size: 0.85rem;
   }
 `;
 

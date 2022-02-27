@@ -34,6 +34,8 @@ const Timer = () => {
   }
 
   function changeMode() {
+    setActive(!active);
+    setSeconds(0);
     if (mode === "Stopwatch") {
       setMode("Countdown Timer");
     } else {
@@ -70,8 +72,8 @@ const Timer = () => {
   const myRef = useRef(null);
 
   function addSeconds() {
-    if (myRef.current.value < 0) {
-      alert("Negative numbers are not allowed.");
+    if (myRef.current.value <= 0) {
+      alert("Zero and negative numbers are not allowed.");
       setSeconds(0);
     } else {
       let ref = myRef.current.value;
@@ -82,7 +84,7 @@ const Timer = () => {
   return (
     <Container>
       <Display>
-        <Numbers>{seconds}</Numbers>
+        <Numbers characters={seconds < 1000 ? 1 : 0}>{seconds}</Numbers>
       </Display>
 
       <Unit>seconds</Unit>
