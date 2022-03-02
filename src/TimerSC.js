@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import digitalFontWoff2 from "./fonts/digital-7-webfont.woff2";
-import digitalFontWoff from "./fonts/digital-7-webfont.woff";
+import { rotate } from "./animations/rotate";
 
 export const Container = styled.div`
   text-align: center;
@@ -21,71 +20,132 @@ export const Display = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 3%;
+
+  @media screen and (min-width: 1450px) {
+    margin-bottom: 6%;
+  }
 `;
 
 export const Img = styled.img`
   margin-top: 2px;
   position: absolute;
-  width: 20%;
+  width: 30%;
 
-  @media screen and (max-width: 1920px) {
+  @media screen and (min-width: 1921px) {
     width: 15%;
   }
 
+  @media screen and (max-width: 1920px) {
+    width: 18%;
+  }
+
+  @media screen and (max-width: 1700px) {
+    width: 22%;
+  }
+
+  @media screen and (max-width: 1450px) {
+    width: 20%;
+  }
+
+  @media screen and (max-width: 1000px) {
+    width: 24%;
+  }
+
+  @media screen and (max-width: 900px) {
+    width: 28%;
+  }
+
   @media screen and (max-width: 720px) {
-    width: 30%;
+    width: 35%;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 40%;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 48%;
   }
 
   @media screen and (max-width: 375px) {
     width: 60%;
   }
 
-  -webkit-animation: rotate-center 1s linear infinite both;
-  animation: rotate-center 1s linear infinite both;
-
-  @-webkit-keyframes rotate-center {
-    0% {
-      -webkit-transform: rotate(0);
-      transform: rotate(0);
-    }
-    100% {
-      -webkit-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
-  }
-  @keyframes rotate-center {
-    0% {
-      -webkit-transform: rotate(0);
-      transform: rotate(0);
-    }
-    100% {
-      -webkit-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
-  }
+  ${rotate}
 `;
 
 export const Numbers = styled.h1`
-  @font-face {
-    font-family: "digital-7";
-    src: url("${digitalFontWoff2}") format("woff2"),
-      url("${digitalFontWoff}") format("woff");
-    font-style: normal;
-    font-weight: normal;
-  }
-
   display: flex;
   justify-content: center;
-  font-family: "digital-7";
   align-items: center;
   width: 50%;
   margin: 0;
 
   ${(props) => {
     if (props.characters) {
-      return `font-size: 115px;`;
+      return `@media screen and (min-width: 1921px) {
+    font-size: 150px;
+  }
+
+  @media screen and (max-width: 1920px) {
+    font-size: 125px;
+  }
+
+  @media screen and (max-width: 1450px) {
+    font-size: 105px;
+  }
+
+    @media screen and (max-width: 1000px) {
+    font-size: 100px;
+  }
+
+  @media screen and (max-width: 720px) {
+    font-size: 95px;
+
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 85px;
+
+  }
+
+  @media screen and (max-width: 375px) {
+    font-size: 85px;
+
+  }`;
     } else {
-      return `font-size: 70px;`;
+      return `@media screen and (min-width: 2001px) {
+    font-size: 125px;
+  }
+
+  @media screen and (max-width: 2000px) {
+    font-size: 116px;
+  }
+
+  @media screen and (max-width: 1920px) {
+    font-size: 125px;
+  }
+
+  @media screen and (max-width: 1450px) {
+    font-size: 83px;
+  }
+
+      @media screen and (max-width: 1000px) {
+    font-size: 85px;
+  }
+
+  @media screen and (max-width: 730px) {
+    font-size: 77px;
+        color: yellow;
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 73px;
+  }
+
+  @media screen and (max-width: 375px) {
+    font-size: 70px;
+  }`;
     }
   }}
 
