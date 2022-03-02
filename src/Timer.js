@@ -1,5 +1,7 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
+import img from "./img/b-white.png";
+import imgRed from "./img/b-red.png";
 
 //? STYLES:
 import {
@@ -13,6 +15,7 @@ import {
   ChangeModeButton,
   Mode,
   InputContainer,
+  Img,
 } from "./TimerSC";
 
 //? ICONS:
@@ -91,10 +94,26 @@ const Timer = () => {
   return (
     <Container>
       <Display>
-        <Numbers characters={seconds < 1000 ? 1 : 0}>{seconds}</Numbers>
+        {active === true ? (
+          mode === "Countdown Timer" && seconds <= 10 ? (
+            <Img src={imgRed} alt="not found" />
+          ) : (
+            <Img src={img} alt="not found" />
+          )
+        ) : (
+          <></>
+        )}
+        <Numbers
+          characters={seconds < 1000 ? 1 : 0}
+          countdown={
+            mode === "Countdown Timer" && seconds !== 0 && seconds <= 10 ? 1 : 0
+          }
+        >
+          {seconds}
+        </Numbers>
       </Display>
 
-      <Unit>seconds</Unit>
+      {/* <Unit>seconds</Unit> */}
 
       <ContainerButtons>
         <ActiveButton onClick={toggle} state={active ? 1 : 0}>

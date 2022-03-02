@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import digitalFontWoff2 from "./fonts/digital-7-webfont.woff2";
+import digitalFontWoff from "./fonts/digital-7-webfont.woff";
 
 export const Container = styled.div`
   text-align: center;
@@ -18,20 +20,80 @@ export const Display = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 3%;
+`;
+
+export const Img = styled.img`
+  margin-top: 2px;
+  position: absolute;
+  width: 20%;
+
+  @media screen and (max-width: 1920px) {
+    width: 15%;
+  }
+
+  @media screen and (max-width: 720px) {
+    width: 30%;
+  }
+
+  @media screen and (max-width: 375px) {
+    width: 60%;
+  }
+
+  -webkit-animation: rotate-center 1s linear infinite both;
+  animation: rotate-center 1s linear infinite both;
+
+  @-webkit-keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+      transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+      transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
 `;
 
 export const Numbers = styled.h1`
+  @font-face {
+    font-family: "digital-7";
+    src: url("${digitalFontWoff2}") format("woff2"),
+      url("${digitalFontWoff}") format("woff");
+    font-style: normal;
+    font-weight: normal;
+  }
+
   display: flex;
   justify-content: center;
+  font-family: "digital-7";
   align-items: center;
   width: 50%;
   margin: 0;
 
   ${(props) => {
     if (props.characters) {
-      return `font-size: 200px;`;
+      return `font-size: 115px;`;
     } else {
-      return `font-size: 125px;`;
+      return `font-size: 70px;`;
+    }
+  }}
+
+  ${(props) => {
+    if (props.countdown) {
+      return `color: red;`;
+    } else {
+      return `color: white;`;
     }
   }}
 `;
