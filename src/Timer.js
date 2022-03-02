@@ -1,5 +1,10 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
+
+//? COMPONENTS:
+import Footer from "./Footer";
+
+//? IMAGES:
 import img from "./img/b-white.png";
 import imgRed from "./img/b-red.png";
 
@@ -140,6 +145,7 @@ const Timer = () => {
           )}
         </InputContainer>
       </Mode>
+      <Footer />
     </Container>
   );
 };
