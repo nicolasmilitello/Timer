@@ -17,3 +17,11 @@ Esta app funciona en dos modos, una como contador, y otra como cuenta regresiva.
 Contiene un formulario controlado para la entrada de segundos.
 
 Las tecnologías utilizadas son JavaScript, React y Styled Components.
+
+---
+
+![ImageText](./src/img/Screenshot_01.png)
+
+![ImageText](./src/img/Screenshot_02.png)
+
+![ImageText](./src/img/Screenshot_03.png)
