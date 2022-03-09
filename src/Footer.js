@@ -17,7 +17,7 @@ function Footer() {
         <Text>2022</Text>
       </TextContainer>
       <CreditsContainer>
-        <Credits>Designed by Nicolas Militello.</Credits>
+        <Credits>Developed by Nicolas Militello.</Credits>
       </CreditsContainer>
     </Container>
   );
