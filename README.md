@@ -7,6 +7,6 @@ This app works in two ways. One of them is as a counter and the other one as a c
 It contains a controlled form for the seconds entry.
 
 The technologies that were used are:
-![ImageText](./src/img/JavaScript logo.png) Javascript;
+![ImageText](./src/img/JavaScript_logo.png) Javascript;
 React;
 Styled-Component.
