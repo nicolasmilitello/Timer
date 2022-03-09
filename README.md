@@ -6,7 +6,14 @@ This app works in two ways. One of them is as a counter and the other one as a c
 
 It contains a controlled form for the seconds entry.
 
-The technologies that were used are:
-![ImageText](./src/img/JavaScript_logo.png) Javascript;
-React;
-Styled-Component.
+The technologies that were used are: Javascript; React and Styled Components.
+
+---
+
+Esta es una sencilla responsive React App realizada durante el bootcamp Henry.
+
+Esta app funciona en dos modos, una como contador, y otra como cuenta regresiva.
+
+Contiene un formulario controlado para la entrada de segundos.
+
+Las tecnologías utilizadas son JavaScript, React y Styled Components.
