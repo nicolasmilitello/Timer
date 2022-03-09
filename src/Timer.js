@@ -29,7 +29,7 @@ import { MdRefresh } from "react-icons/md";
 const Timer = () => {
   const [seconds, setSeconds] = useState(0);
   const [active, setActive] = useState(false);
-  const [mode, setMode] = useState("Stopwatch");
+  const [mode, setMode] = useState("Counter");
 
   function toggle() {
     setActive(!active);
@@ -43,27 +43,27 @@ const Timer = () => {
   function changeMode() {
     setActive(false);
     setSeconds(0);
-    if (mode === "Stopwatch") {
+    if (mode === "Counter") {
       setMode("Countdown Timer");
     } else {
-      setMode("Stopwatch");
+      setMode("Counter");
     }
   }
 
   useEffect(() => {
     let interval = null;
-    if (active && mode === "Stopwatch" && seconds < 99999) {
+    if (active && mode === "Counter" && seconds < 99999) {
       interval = setInterval(() => {
         setSeconds((seconds) => seconds + 1);
       }, 1000);
     }
-    if (mode === "Stopwatch" && seconds === 99999) {
+    if (mode === "Counter" && seconds === 99999) {
       setActive(false);
       setSeconds(0);
       alert("Maximum number of second reached");
     }
 
-    if (!active && seconds !== 0 && mode === "Stopwatch") {
+    if (!active && seconds !== 0 && mode === "Counter") {
       clearInterval(interval);
     }
 
